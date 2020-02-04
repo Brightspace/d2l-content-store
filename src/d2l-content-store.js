@@ -33,7 +33,7 @@ class D2lContentStore extends LitElement {
 		return html`
 		<d2l-content-store-app
 			api-endpoint=${this.apiEndpoint}
-			auth-token=${this.authToken}
+			token=${this.token}
 		></d2l-content-store-app>
 		`;
 	}

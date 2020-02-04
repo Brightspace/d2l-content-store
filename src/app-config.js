@@ -1,6 +1,6 @@
 const properties = {
 	apiEndpoint: { type: String, attribute: 'api-endpoint' },
-	authToken: { type: String, attribute: 'auth-token' }
+	token: { type: String, attribute: 'token' }
 };
 
 export default {

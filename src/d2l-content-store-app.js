@@ -13,7 +13,7 @@ class D2lContentStoreApp extends connect(store)(InternalLocalizeMixin(LitElement
 			_page: { type: String },
 			prop1: { type: String },
 			token: {
-				type: Object
+				type: Function
 			},
 			someStringAttribute: { type: String },
 			someBooleanAttribute: { type: Boolean }
