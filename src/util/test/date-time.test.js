@@ -79,6 +79,11 @@ const relativeExamples = [
 ];
 
 describe('fuzzyDateTime', () => {
+	before(function() {
+		if (!Intl.RelativeTimeFormat) {
+			this.skip(); // eslint-disable-line no-invalid-this
+		}
+	});
 	describe('formatRelativeDate', () => {
 		it('omits the time when formatting an absolute date', () => {
 			expect(formatRelativeDate(past.days(5), { origin: noon })).to.match(shortDateRegex);
