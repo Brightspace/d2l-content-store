@@ -33,13 +33,13 @@ const shortDateTimeRegex = /^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2} [AP]M$/;
 const fullDateRegex = /^\w+, \w+ \d{1,2}, \d{4}$/;
 const fullDateTimeRegex = /^\w+, \w+ \d{1,2}, \d{4} \d{1,2}:\d{2} [AP]M\s*$/;
 
-const enAlwaysShort = new Intl.RelativeTimeFormat('en', {
+const enAlwaysShort = Intl && Intl.RelativeTimeFormat && new Intl.RelativeTimeFormat('en', {
 	localeMatcher: 'best fit',
 	numeric: 'always',
 	style: 'short'
 });
 
-const frAutoLong = new Intl.RelativeTimeFormat('fr', {
+const frAutoLong = Intl && Intl.RelativeTimeFormat && new Intl.RelativeTimeFormat('fr', {
 	localeMatcher: 'best fit',
 	numeric: 'auto',
 	style: 'long'
@@ -107,7 +107,7 @@ describe('fuzzyDateTime', () => {
 		describe('the readme examples', () => {
 			const origin = new Date(2015, 8, 23, 14, 5, 30);
 
-			const ruAlwaysShort = new Intl.RelativeTimeFormat('ru', {
+			const ruAlwaysShort = Intl && Intl.RelativeTimeFormat && new Intl.RelativeTimeFormat('ru', {
 				localeMatcher: 'best fit',
 				numeric: 'always',
 				style: 'short'
