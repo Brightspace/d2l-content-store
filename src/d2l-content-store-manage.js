@@ -92,7 +92,7 @@ class D2lContentStoreManage extends DependencyRequester(PageViewElement) {
 			'page',
 			change => {
 				if (change.newValue === 'manage') {
-					console.log(`Four page changed from ${change.oldValue} to ${change.newValue}`);
+					console.log(`Your page changed from ${change.oldValue} to ${change.newValue}`);
 				}
 
 				if (this.rootStore.routingStore.page === 'manage') {

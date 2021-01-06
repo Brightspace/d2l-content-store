@@ -126,8 +126,9 @@ export class Uploader {
 				content.id,
 				{
 					title: file.name,
-					extension
-				}
+					extension,
+					formats: ['hd', 'sd'],
+				},
 			);
 			const uploader = new S3Uploader({
 				file,
@@ -151,6 +152,8 @@ export class Uploader {
 			await this.apiClient.processRevision({
 				contentId: content.id,
 				revisionId: revision.id
+			}, {
+				captionLanguages: ['en-US'],
 			});
 			await this._monitorProgressAsync(content, revision, ({ percentComplete = 0, ready, error }) => {
 				const upload = this.uploads.find(

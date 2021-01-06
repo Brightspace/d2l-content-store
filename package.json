@@ -56,8 +56,9 @@
     "file-drop-element": "^0",
     "lit-element": "^2",
     "mobx": "^5.15.4",
-    "page": "^1.11.5",
-    "pwa-helpers": "^0.9.1"
+    "page": "^1",
+    "pwa-helpers": "^0.9.1",
+    "screenfull": "^5.0.2"
   },
   "xo": {
     "env": [
