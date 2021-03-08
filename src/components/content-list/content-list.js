@@ -28,8 +28,8 @@ import { rootStore } from '../../state/root-store.js';
 class ContentList extends DependencyRequester(InternalLocalizeMixin(NavigationMixin(LitElement))) {
 	static get properties() {
 		return {
-			contentItems: { type: Array, attribute: false },
-			loading: { type: Boolean, attribute: false }
+			contentItems: { type: Array },
+			loading: { type: Boolean }
 		};
 	}
 
