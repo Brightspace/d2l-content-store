@@ -4,7 +4,9 @@ import { d2lfetch } from 'd2l-fetch/src/index.js';
 import { dateFilterToSearchQuery } from './date-filter.js';
 import { contentFilterToSearchQuery } from './content-type.js';
 
-d2lfetch.use({ name: 'auth', fn: auth });
+const localD2lfetch = d2lfetch
+	.addTemp({ name: 'auth', fn: auth })
+	.removeTemp('simple-cache');
 
 export default class ContentServiceClient {
 	constructor({
@@ -43,7 +45,7 @@ export default class ContentServiceClient {
 		};
 		const request = new Request(this._url(path, query), requestInit);
 
-		const response = await d2lfetch.fetch(request);
+		const response = await localD2lfetch.fetch(request);
 		if (!response.ok) {
 			throw new Error(response.statusText);
 		}
@@ -57,8 +59,6 @@ export default class ContentServiceClient {
 
 	searchContent({ start = 0, size = 20, sort, query = '', contentType = '', updatedAt = '', createdAt = '' }) {
 		const headers = new Headers();
-		headers.append('pragma', 'no-cache');
-		headers.append('cache-control', 'no-cache');
 
 		return this._fetch({
 			path: `/api/${this.tenantId}/search/content`,
@@ -138,8 +138,6 @@ export default class ContentServiceClient {
 		revisionId
 	}) {
 		const headers = new Headers();
-		headers.append('pragma', 'no-cache');
-		headers.append('cache-control', 'no-cache');
 		return this._fetch({
 			path: `/api/${this.tenantId}/content/${contentId}/revisions/${revisionId}/progress`,
 			headers
