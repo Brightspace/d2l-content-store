@@ -35,7 +35,7 @@ describe('content-list-item', () => {
 		expect(dropdownMenu.opened).to.be.true;
 
 		// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
-		//await expect(el).to.be.accessible();
+		// await expect(el).to.be.accessible();
 	});
 
 	it('passes all aXe tests after opening rename dialog', async() => {
@@ -50,6 +50,6 @@ describe('content-list-item', () => {
 		expect(renameDialog.opened).to.be.true;
 
 		// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
-		//await expect(el).to.be.accessible();
+		// await expect(el).to.be.accessible();
 	});
 });
