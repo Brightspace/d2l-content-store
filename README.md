@@ -1,3 +1,6 @@
+# ARCHIVED
+Moved to [Brightspace/content-components](https://github.com/Brightspace/content-components)
+
 # d2l-content-store
 
 [![NPM version](https://img.shields.io/npm/v/Brightspace/d2l-content-store.svg)](https://www.npmjs.org/package/Brightspace/d2l-content-store)
