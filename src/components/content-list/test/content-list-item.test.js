@@ -22,7 +22,8 @@ describe('content-list-item', () => {
 		await expect(el).to.be.accessible();
 	});
 
-	it('passes all aXe tests with dropdown menu opened', async() => {
+	// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
+	it.skip('passes all aXe tests with dropdown menu opened', async() => {
 		const dropdownMore = el.shadowRoot.querySelector('d2l-dropdown-more');
 		const dropdownMenu = el.shadowRoot.querySelector('d2l-dropdown-menu');
 
@@ -33,12 +34,11 @@ describe('content-list-item', () => {
 		await el.updateComplete;
 
 		expect(dropdownMenu.opened).to.be.true;
-
-		// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
-		// await expect(el).to.be.accessible();
+		await expect(el).to.be.accessible();
 	});
 
-	it('passes all aXe tests after opening rename dialog', async() => {
+	// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
+	it.skip('passes all aXe tests after opening rename dialog', async() => {
 		const renameDialog = el.shadowRoot.querySelector('#rename-dialog');
 		const renameInitiator = el.shadowRoot.querySelector('#rename-initiator');
 
@@ -48,8 +48,6 @@ describe('content-list-item', () => {
 		await el.updateComplete;
 
 		expect(renameDialog.opened).to.be.true;
-
-		// this test needs to be skipped until core changes are applied to explicitly set label (https://github.com/BrightspaceUI/core/pull/1342)
-		// await expect(el).to.be.accessible();
+		await expect(el).to.be.accessible();
 	});
 });
